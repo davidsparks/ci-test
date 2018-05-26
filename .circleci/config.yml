@@ -1,8 +1,18 @@
 version: 2
 jobs:
-   build:
-     docker:
-       - image: wodby/drupal-php:7.0-dev-macos-4.4.2
-     steps:
-       - checkout
-       - run: echo "hello world"
+  build1:
+    docker: # Each job requires specifying an executor
+    # (either docker, macos, or machine), see
+    # circleci.com/docs/2.0/executor-types/ for a comparison
+    # and more examples.
+      - image: circleci/ruby:2.4-node
+      - image: circleci/postgres:9.4.12-alpine
+    steps:
+      - checkout
+      - save_cache: # Caches dependencies with a cache key
+      # template for an environment variable,
+      # see circleci.com/docs/2.0/caching/
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/circleci-demo-workflows
+
