@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build1:
+  build:
     docker: # Each job requires specifying an executor
     # (either docker, macos, or machine), see
     # circleci.com/docs/2.0/executor-types/ for a comparison
