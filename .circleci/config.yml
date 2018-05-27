@@ -11,6 +11,7 @@ jobs:
       - image: circleci/php:7.0-apache-node-browsers
     steps:
       - run: echo "Hello 2"
+      - run: exit 1
 
 workflows:
   version: 2
