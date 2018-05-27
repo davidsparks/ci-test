@@ -1,0 +1,20 @@
+          ok  Starting native_osx for sync docker-sync
+          ok  docker-sync container still running, restarting unison in container
+     command  docker exec docker-sync supervisorctl restart unison
+unison: stopped
+unison: started
+          ok  starting initial sync of docker-sync
+     success  Sync container started
+     success  Showing unison logs from your sync container: docker-sync
+[2018-05-26 17:30:55 +0200] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 17:31:23.19 on 26 May 2018
+[2018-05-26 17:30:55 +0200] Sync Log:  [BGN] Updating file .docker-sync/daemon.log from /host_sync to /app_sync
+[2018-05-26 17:30:55 +0200] Sync Log:  [END] Updating file .docker-sync/daemon.log
+[2018-05-26 17:30:55 +0200] Sync Log:  [BGN] Updating file .docker-sync/daemon.pid from /host_sync to /app_sync
+[2018-05-26 17:30:55 +0200] Sync Log:  [END] Updating file .docker-sync/daemon.pid
+[2018-05-26 17:30:55 +0200] Sync Log:  [ERROR] Skipping html/misc/healthchecks/php.check.php
+[2018-05-26 17:30:55 +0200] Sync Log:    Error in querying file information:
+[2018-05-26 17:30:55 +0200] Sync Log:  Bad file descriptor [lstat(/host_sync/html/misc/healthchecks/php.check.php)]
+[2018-05-26 17:30:55 +0200] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 17:31:23.46 on 26 May 2018
+[2018-05-26 17:30:55 +0200] Sync Log:  Synchronization complete at 17:31:23  (2 items transferred, 1 skipped, 0 failed)
+[2018-05-26 17:30:55 +0200] Sync Log:    skipped: html/misc/healthchecks/php.check.php (Error in querying file information:
+[2018-05-26 17:30:55 +0200] Sync Log:  Bad file descriptor [lstat(/host_sync/html/misc/healthchecks/php.check.php)])
